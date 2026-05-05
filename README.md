@@ -124,6 +124,8 @@ Data collected manually using:
 - RGB Camera (from SICK AG)
 - LiDAR sensor (from SICK AG)
 
+<img src="assets/sensors.jpeg" height="70%" width="30%">
+
 Scenarios:
 - Clean
 - Dust
@@ -212,8 +214,7 @@ Instead of reacting to single noisy measurements, the system uses **temporal con
 
 ## 🙌 Author
 
-[Utkarsh Anand](https://utkarshanand221.netlify.app/)
-MS Robotics, RWTH Aachen
+[Utkarsh Anand](https://utkarshanand221.netlify.app/), MS Robotics, RWTH Aachen
 
 Credits for assistance in data collection:-
 * Vishnucharan
