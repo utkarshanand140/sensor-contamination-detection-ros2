@@ -1,3 +1,6 @@
+![ROS2](https://img.shields.io/badge/ROS2-Jazzy-blue)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+
 # 🚦 Real-Time Sensor Contamination Detection for Robotics (ROS2)
 
 Detects **water, dust, and mud contamination** on LiDAR and camera sensors in real-time using multi-sensor fusion and temporal reasoning.
@@ -8,7 +11,18 @@ Detects **water, dust, and mud contamination** on LiDAR and camera sensors in re
 
 ## 🎥 Demo
 
-![Demo](assets/demo.gif)
+<table>
+  <tr>
+    <td align="center">
+      <img src="assets/demo.gif" width="100%"><br>
+      Contaminating sensors by spraying water.
+    </td>
+    <td align="center">
+      <img src="assets/pov_demo.gif" width="100%"><br>
+      POV of contamination using water. 
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -45,9 +59,23 @@ We built a real-time contamination detection system that:
 * Publishes status via ROS2
 * Controls LED indicators for real-time feedback
 
+We detect contamination by monitoring:
+
+### 📡 LiDAR signals
+- Mean intensity
+- Low-percentile intensity (p10)
+- Near-range ratios
+
+### 📷 Camera signals
+- Blur (Laplacian variance)
+- Dark pixel ratio
+- Edge density
+
+👉 These are fused into a **contamination score**
+
 ---
 
-## 🧠 How It Works
+## 🧠 System Overview
 
 ```
 LiDAR + Camera
@@ -67,9 +95,11 @@ State Machine + Rules
 Final Output
 ```
 
+![](docs/Architecture.png)
+
 ---
 
-## ⚙️ Key Ideas
+## ⚙️ Key 
 
 * **Multi-Sensor Fusion**
   Combines LiDAR intensity and camera sharpness
@@ -88,23 +118,39 @@ Final Output
 
 ---
 
+## 📷 Real-World Data
+
+Data collected manually using:
+- RGB Camera (from SICK AG)
+- LiDAR sensor (from SICK AG)
+
+Scenarios:
+- Clean
+- Dust
+- Water spray
+- Mud contamination
+
+---
+
+
+
 ## 📊 Results
 
 ### 📷 Camera Observations
 
 | Clean                        | Water                        | Mud                        |
 | ---------------------------- | ---------------------------- | -------------------------- |
-| ![](assets/clean_camera.png) | ![](assets/water_camera.png) | ![](assets/mud_camera.png) |
+| ![](assets/clean_c.png) | ![](assets/water_c.png) | ![](assets/mud_c.png) |
 
 ---
 
 ### 📡 LiDAR Point Cloud
 
-| Clean                    | Contaminated           |
-| ------------------------ | ---------------------- |
-| ![](assets/pc_clean.png) | ![](assets/pc_mud.png) |
+| Clean                        | Water                        | Mud                        |
+| ---------------------------- | ---------------------------- | -------------------------- |
+| ![](assets/clean_l.png) | ![](assets/water_l.png) | ![](assets/mud_l.png) |
 
-👉 Notice how contamination degrades signal quality.
+👉 Notice how any form of contamination degrades signal quality.
 
 ---
 
@@ -156,7 +202,30 @@ Instead of reacting to single noisy measurements, the system uses **temporal con
 
 ---
 
+## 📌 Future Work
+
+- Learning-based fusion (ML)
+- Adaptive thresholds
+- Self-cleaning triggers
+
+---
+
 ## 🙌 Author
 
-Utkarsh
+[Utkarsh Anand](https://utkarshanand221.netlify.app/)
 MS Robotics, RWTH Aachen
+
+Credits for assistance in data collection:-
+* Vishnucharan
+* Saimothish
+* Kishore
+
+---
+
+For more details on methodology and feature extraction, refer [here](docs/methodology.md).
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+All work and data collection were performed independently by the author.
