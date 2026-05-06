@@ -212,14 +212,12 @@ Instead of reacting to single noisy measurements, the system uses **temporal con
 
 ---
 
-## 🙌 Author
+## 🙌 Author and Teammates
 
-[Utkarsh Anand](https://utkarshanand221.netlify.app/), MS Robotics, RWTH Aachen
-
-Teamamtes:-
-* Vishnucharan
-* Saimothish
-* Kishore
+* [Utkarsh Anand](https://utkarshanand221.netlify.app/), MS Robotics, RWTH Aachen
+* Vishnucharan S, MS Robotics, RWTH Aachen
+* Saimothish Ramalingam, MS Robotics, RWTH Aachen
+* Kishore Satyaprakash, MS Robotics, RWTH Aachen
 
 ---
 
