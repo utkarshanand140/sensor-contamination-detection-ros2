@@ -216,7 +216,7 @@ Instead of reacting to single noisy measurements, the system uses **temporal con
 
 [Utkarsh Anand](https://utkarshanand221.netlify.app/), MS Robotics, RWTH Aachen
 
-Credits for assistance in data collection:-
+Teamamtes:-
 * Vishnucharan
 * Saimothish
 * Kishore
